@@ -5,7 +5,13 @@ import store from './store/'
 import {routerMode} from './config/env'
 import './config/rem'
 import FastClick from 'fastclick'
+import VueLazyload from 'vue-lazyload'
+import loadingImg from './images/activity.png'
 
+Vue.use(VueLazyload, {
+	loading: loadingImg,
+	preLoad: 1
+})
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);

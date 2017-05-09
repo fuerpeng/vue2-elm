@@ -3,7 +3,7 @@
 		<ul v-load-more="loaderMore" v-if="shopListArr.length" type="1">
 			<router-link :to="{path: 'shop', query:{geohash, id: item.id}}" v-for="item in shopListArr" tag='li' :key="item.id" class="shop_li">
 				<section>
-					<img :src="getImgPath(item.image_path)" class="shop_img">
+					<img v-lazy="getImgPath(item.image_path)" class="shop_img">
 				</section>
 				<hgroup class="shop_right">
 					<header class="shop_detail_header">
